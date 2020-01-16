@@ -1,7 +1,5 @@
 package Equipments;
 
-import Behaviours.IDammagable;
-
 public abstract class Equipment {
 
     String name;

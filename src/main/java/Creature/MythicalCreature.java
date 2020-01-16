@@ -1,10 +1,11 @@
 package Creature;
 
+import Behaviours.IRoomable;
 import Equipments.Equipment;
 import Character.Character;
 
 
-public class MythicalCreature {
+public class MythicalCreature implements IRoomable {
 
     int hp;
     Equipment equipment;

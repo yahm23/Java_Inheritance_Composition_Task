@@ -1,6 +1,8 @@
 package Types;
 
-public enum TreasureType {
+import Behaviours.IRoomable;
+
+public enum TreasureType implements IRoomable {
     GOLD,
     SILVER,
     GEM;
