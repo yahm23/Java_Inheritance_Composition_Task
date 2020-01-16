@@ -2,7 +2,7 @@ package Character;
 
 import Equipments.Equipment;
 import Types.ArmourType;
-import Types.TreaureType;
+import Types.TreasureType;
 
 import java.util.ArrayList;
 
@@ -10,13 +10,13 @@ public abstract class Character  {
     int hp;
     Equipment equipment;
     ArmourType armour;
-    ArrayList<TreaureType> bag;
+    ArrayList<TreasureType> bag;
 
     public Character(int hp, Equipment equipment, ArmourType armour) {
         this.hp = hp;
         this.equipment = equipment;
         this.armour = armour;
-        this.bag = new ArrayList<TreaureType>();
+        this.bag = new ArrayList<TreasureType>();
 
     }
 
@@ -44,11 +44,12 @@ public abstract class Character  {
         this.armour = armour;
     }
 
-    public ArrayList<TreaureType> getBag() {
-        return bag;
+    public ArrayList<TreasureType> getBag() {
+
+        return new ArrayList<TreasureType>(this.bag);
     }
 
-    public void setBag(ArrayList<TreaureType> bag) {
+    public void setBag(ArrayList<TreasureType> bag) {
         this.bag = bag;
     }
 

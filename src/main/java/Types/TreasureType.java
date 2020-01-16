@@ -1,6 +1,6 @@
 package Types;
 
-public enum TreaureType {
+public enum TreasureType {
     GOLD,
     SILVER,
     GEM;
