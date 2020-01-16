@@ -11,6 +11,8 @@ public class SpellCaster extends Character {
     public SpellCaster(int hp, Equipment equipment, ArmourType armour, MythicalCreature mythicalCreature) {
         super(hp, equipment, armour);
         this.mythicalCreature = mythicalCreature;
+
+        this.setArmour(ArmourType.CLOTH);
     }
 
     public MythicalCreature getCompanion() {

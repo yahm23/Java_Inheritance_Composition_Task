@@ -1,7 +1,7 @@
 package Types;
 
 public enum ArmourType {
-        PLATE(10),
+        PLATE(30),
         CLOTH(1),
         CHAINMAIL(7),
         LEATHER(4);
