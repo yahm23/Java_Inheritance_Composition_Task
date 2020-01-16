@@ -1,5 +1,7 @@
 package Equipments;
 
+import Behaviours.IDammagable;
+
 public abstract class Equipment {
 
     String name;
@@ -18,4 +20,6 @@ public abstract class Equipment {
     public String getName() {
         return this.name;
     }
+
+
 }

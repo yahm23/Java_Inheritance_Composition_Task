@@ -1,5 +1,6 @@
 package Character;
 
+import Creature.MythicalCreature;
 import Equipments.Equipment;
 import Types.ArmourType;
 import Types.TreasureType;
@@ -13,7 +14,7 @@ public abstract class Character  {
     ArrayList<TreasureType> bag;
 
     public Character(int hp, Equipment equipment, ArmourType armour) {
-        this.hp = hp;
+        this.hp = hp + armour.getValue();
         this.equipment = equipment;
         this.armour = armour;
         this.bag = new ArrayList<TreasureType>();
@@ -51,6 +52,14 @@ public abstract class Character  {
 
     public void setBag(ArrayList<TreasureType> bag) {
         this.bag = bag;
+    }
+
+    public void attack(MythicalCreature creature){
+        int attackDamage = this.equipment.getDMG();
+        int creatureHealth = creature.getHp();
+        int result = creatureHealth - attackDamage;
+        creature.setHp(result);
+
     }
 
 
