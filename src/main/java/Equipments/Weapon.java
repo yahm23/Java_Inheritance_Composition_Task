@@ -1,21 +1,10 @@
 package Equipments;
 
-public class Weapon {
-
-    String name;
-    int damage;
+public class Weapon extends Equipment {
 
     public Weapon(String name, int damage) {
-        this.name =name;
-        this.damage= damage;
+        super(name,damage);
+
     }
 
-
-    public int getDMG() {
-        return this.damage;
-    }
-
-    public String getName() {
-        return this.name;
-    }
 }
