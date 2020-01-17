@@ -1,8 +1,11 @@
 package Creature;
 
+
 import Behaviours.IRoomable;
 import Equipments.Equipment;
 import Character.Character;
+import Character.SpellCaster;
+
 
 
 public abstract class MythicalCreature implements IRoomable {
@@ -32,9 +35,23 @@ public abstract class MythicalCreature implements IRoomable {
     }
 
     public void attack(Character character) {
-        int attackDamage = this.equipment.getDMG();
-        int characterHealth = character.getHp();
-        int result = characterHealth - attackDamage;
-        character.setHp(result);
+        if (character instanceof SpellCaster) {
+            if (((SpellCaster) character).getCompanion().getHp() > 0) {
+                int attackDamage = this.equipment.getDMG();
+                ((SpellCaster) character).dealDamageToCompanion(attackDamage);
+            } else {
+                int attackDamage = this.equipment.getDMG();
+                int characterHealth = character.getHp();
+                int result = characterHealth - attackDamage;
+                character.setHp(result);
+            }
+
+        } else {
+            int attackDamage = this.equipment.getDMG();
+            int characterHealth = character.getHp();
+            int result = characterHealth - attackDamage;
+            character.setHp(result);
+        }
     }
+
 }

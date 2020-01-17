@@ -2,8 +2,13 @@ package Creature;
 
 import Equipments.Equipment;
 
+import Equipments.Sword;
+
 public class Orc extends MythicalCreature {
-    public Orc(int hp, Equipment equipment) {
-        super(hp, equipment);
+
+    private static final Sword sword = new Sword() ;
+
+    public Orc() {
+        super(70,sword);
     }
 }

@@ -2,7 +2,9 @@ package Character;
 
 
 import Creature.Orc;
+import Equipments.Axe;
 import Equipments.Potion;
+import Equipments.Sword;
 import Equipments.Weapon;
 import Types.ArmourType;
 import org.junit.Before;
@@ -15,21 +17,22 @@ public class HealerTest {
     Healer healer;
     Potion potion;
     Orc orc;
-    Weapon weapon;
+    Axe axe;
+    Sword sword;
 
     @Before
     public void before(){
         potion = new Potion("Elixir", 10);
         healer = new Healer(50, potion, ArmourType.CLOTH);
-        weapon = new Weapon("Axe", 25);
-        orc = new Orc(20, weapon);
+        axe = new Axe();
+        orc = new Orc();
     }
 
     @Test
     public void canHeal(){
     orc.attack(healer);
     healer.heal();
-    assertEquals(46, healer.getHp());
+    assertEquals(56, healer.getHp());
     }
 
 

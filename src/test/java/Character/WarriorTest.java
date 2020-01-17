@@ -1,6 +1,7 @@
 package Character;
 
 import Creature.Orc;
+import Equipments.Sword;
 import Equipments.Weapon;
 import Types.ArmourType;
 import org.junit.Before;
@@ -11,24 +12,24 @@ import static org.junit.Assert.assertEquals;
 public class WarriorTest {
 
     Warrior warrior;
-    Weapon weapon;
+    Sword sword;
     Orc orc;
 
     @Before
     public void before(){
-        weapon = new Weapon("Sword", 10);
-        warrior = new Warrior(100, weapon, ArmourType.PLATE);
-        orc = new Orc(30, weapon);
+        sword = new Sword();
+        warrior = new Warrior(100, sword, ArmourType.PLATE);
+        orc = new Orc();
 
     }
 
     @Test
     public void hasHP(){
-        assertEquals(110, warrior.getHp());
+        assertEquals(130, warrior.getHp());
     }
     @Test
     public void hasWeapon(){
-        assertEquals(weapon, warrior.getEquipment());
+        assertEquals(sword, warrior.getEquipment());
     }
     @Test
     public void hasArmour(){
@@ -42,6 +43,6 @@ public class WarriorTest {
     @Test
     public void canAttackOrc(){
         warrior.attack(orc);
-        assertEquals(20, orc.getHp());
+        assertEquals(55, orc.getHp());
     }
 }

@@ -1,5 +1,6 @@
 package Equipment;
 
+import Equipments.Sword;
 import Equipments.Weapon;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,22 +9,22 @@ import static org.junit.Assert.*;
 
 public class WeaponTest {
 
-    Weapon weapon;
+    Sword sword;
 
     @Before
     public void setup(){
-        weapon = new Weapon("Sword", 10 );
+        sword = new Sword() ;
 
     }
 
     @Test
     public void canGetDMG(){
-        assertEquals(10,weapon.getDMG());
+        assertEquals(15,sword.getDMG());
     }
 
     @Test
     public void canGetName(){
-        assertEquals("Sword",weapon.getName());
+        assertEquals("Sword",sword.getName());
     }
 
 }

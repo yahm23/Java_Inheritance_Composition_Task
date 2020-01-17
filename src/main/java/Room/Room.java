@@ -17,6 +17,7 @@ public class Room {
         if (mission instanceof TreasureType){
             chest.add((TreasureType) mission);
         }
+
     }
 
     public IRoomable getMission() {

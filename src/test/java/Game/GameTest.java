@@ -3,7 +3,7 @@ import Character.Warrior;
 import Creature.Orc;
 
 
-
+import Equipments.Sword;
 import Equipments.Weapon;
 import Game.Game;
 import Room.Room;
@@ -19,35 +19,42 @@ public class GameTest {
 
     Game game;
     Warrior warrior;
-    Weapon weapon;
     Orc orc;
     Room room;
+    Room room2;
+    Sword sword;
 
     @Before
     public void before(){
-        weapon = new Weapon("Long Sword", 20);
-        warrior =  new Warrior (100, weapon, ArmourType.PLATE);
-        orc = new Orc(50, weapon);
+
+        sword  = new Sword();
+        warrior =  new Warrior (100, sword, ArmourType.PLATE);
+        orc = new Orc();
         room = new Room(TreasureType.GEM);
+        room2 = new Room(orc);
+//        game =new Game(warrior);
 
     }
     @Test
     public void canCheckChestHasTreasure(){
         assertEquals(1,room.getChest().size() );
     }
+
     @Test
     public void canCompleteRoomWithCreature(){
         room = new Room(orc);
         warrior.attack(orc);
         warrior.attack(orc);
         warrior.attack(orc);
-
+        warrior.attack(orc);
+        warrior.attack(orc);
+        //orc has 70 health and warrior attack is 15
         assertTrue(room.missionCompleted());
     }
 
     @Test
     public void canNotCompleteRoomWithCreature(){
-        room = new Room(orc);
+        room2 = new Room(orc);
         warrior.attack(orc);
         warrior.attack(orc);
 
@@ -65,7 +72,7 @@ public class GameTest {
         assertFalse(room.missionCompleted());
     }
 
-    @
+
 
 
 
