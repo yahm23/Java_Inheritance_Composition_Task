@@ -13,7 +13,7 @@ import com.sun.tools.corba.se.idl.constExpr.Or;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class GameTest {
 
@@ -36,9 +36,36 @@ public class GameTest {
         assertEquals(1,room.getChest().size() );
     }
     @Test
-    public void canCompleteRoom(){
+    public void canCompleteRoomWithCreature(){
+        room = new Room(orc);
+        warrior.attack(orc);
+        warrior.attack(orc);
+        warrior.attack(orc);
 
+        assertTrue(room.missionCompleted());
     }
+
+    @Test
+    public void canNotCompleteRoomWithCreature(){
+        room = new Room(orc);
+        warrior.attack(orc);
+        warrior.attack(orc);
+
+        assertFalse(room.missionCompleted());
+    }
+
+    @Test
+    public void canCompleteRoomWithTreasure(){
+        warrior.loot(room);
+        assertTrue(room.missionCompleted());
+    }
+
+    @Test
+    public void canNotCompleteRoomWithTreasure(){
+        assertFalse(room.missionCompleted());
+    }
+
+    @
 
 
 

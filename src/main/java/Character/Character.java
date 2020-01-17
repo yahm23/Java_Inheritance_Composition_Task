@@ -2,6 +2,7 @@ package Character;
 
 import Creature.MythicalCreature;
 import Equipments.Equipment;
+import Room.Room;
 import Types.ArmourType;
 import Types.TreasureType;
 
@@ -63,5 +64,10 @@ public abstract class Character  {
     }
 
 
-
+    public void loot(Room room){
+        for (TreasureType treasure: room.getChest()){
+            this.bag.add(treasure);
+            room.emptyChest();
+        }
+    }
 }

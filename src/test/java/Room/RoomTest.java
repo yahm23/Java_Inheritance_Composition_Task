@@ -13,7 +13,6 @@ public class RoomTest {
 
     @Before
     public void before(){
-
         room = new Room(TreasureType.GEM);
 
     }

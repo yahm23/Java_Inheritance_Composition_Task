@@ -5,7 +5,7 @@ import Equipments.Equipment;
 import Character.Character;
 
 
-public class MythicalCreature implements IRoomable {
+public abstract class MythicalCreature implements IRoomable {
 
     int hp;
     Equipment equipment;
