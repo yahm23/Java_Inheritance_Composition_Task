@@ -1,21 +1,24 @@
 package Creature;
 
+import Behaviours.IDamageable;
 import Behaviours.IRoomable;
 import Equipments.Equipment;
-import Character.Character;
 
 
-public class MythicalCreature implements IRoomable {
+public class MythicalCreature implements IRoomable, IDamageable {
 
     int hp;
     Equipment equipment;
+    boolean status;
+
 
     public MythicalCreature(int hp, Equipment equipment) {
         this.hp = hp;
         this.equipment = equipment;
+        this.status = true;
     }
 
-    public int getHp() {
+    public int getHP() {
         return hp;
     }
 
@@ -23,7 +26,7 @@ public class MythicalCreature implements IRoomable {
         return equipment;
     }
 
-    public void setHp(int hp) {
+    public void setHP(int hp) {
         this.hp = hp;
     }
 
@@ -31,10 +34,18 @@ public class MythicalCreature implements IRoomable {
         this.equipment = equipment;
     }
 
-    public void attack(Character character) {
+    public void attack(IDamageable character) {
         int attackDamage = this.equipment.getDMG();
-        int characterHealth = character.getHp();
+        int characterHealth = character.getHP();
         int result = characterHealth - attackDamage;
-        character.setHp(result);
+        character.setHP(result);
+    }
+
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus() {
+        this.status = !status;
     }
 }

@@ -3,6 +3,7 @@ package Character;
 import Creature.Orc;
 import Equipments.Weapon;
 import Types.ArmourType;
+import Types.TreasureType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -20,11 +21,12 @@ public class WarriorTest {
         warrior = new Warrior(100, weapon, ArmourType.PLATE);
         orc = new Orc(30, weapon);
 
+
     }
 
     @Test
     public void hasHP(){
-        assertEquals(110, warrior.getHp());
+        assertEquals(110, warrior.getHP());
     }
     @Test
     public void hasWeapon(){
@@ -42,6 +44,12 @@ public class WarriorTest {
     @Test
     public void canAttackOrc(){
         warrior.attack(orc);
-        assertEquals(20, orc.getHp());
+        assertEquals(20, orc.getHP());
+    }
+
+    @Test
+    public void canAddLoot(){
+        warrior.addLoot(TreasureType.GOLD);
+        assertEquals(1, warrior.getBag().size());
     }
 }

@@ -13,7 +13,7 @@ public class Healer extends Character {
         int damage = this.equipment.getDMG();
         int initHealth = this.hp;
         int healamount = damage * 2;
-        this.setHp(initHealth + healamount);
+        this.setHP(initHealth + healamount);
 
     }
 
