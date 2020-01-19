@@ -23,4 +23,5 @@ public class DragonTest {
         assertTrue(dragon instanceof ICompanianble);
     }
 
+
 }

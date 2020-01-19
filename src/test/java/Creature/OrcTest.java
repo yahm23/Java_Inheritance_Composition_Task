@@ -9,8 +9,7 @@ import Types.ArmourType;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 
 public class OrcTest {
@@ -35,7 +34,17 @@ public class OrcTest {
     @Test
     public void canAttackCharacter(){
         orc.attack(warrior);
+<<<<<<< HEAD
         assertEquals(115, warrior.getHp());
+=======
+        assertEquals(85, warrior.getHP());
+
+>>>>>>> 628bbde7f02adffeae430241232cc087d16ba44f
+    }
+
+    @Test
+    public void canCheckCreatureStatus(){
+        assertTrue(orc.getStatus());
     }
 
 }

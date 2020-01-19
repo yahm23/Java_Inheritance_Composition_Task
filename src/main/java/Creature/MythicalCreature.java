@@ -9,16 +9,24 @@ import Character.SpellCaster;
 
 
 public abstract class MythicalCreature implements IRoomable {
+import Behaviours.IRoomable;
+import Equipments.Equipment;
+
+
+public class MythicalCreature implements IRoomable{
 
     int hp;
     Equipment equipment;
+    boolean status;
+
 
     public MythicalCreature(int hp, Equipment equipment) {
         this.hp = hp;
         this.equipment = equipment;
+        this.status = true;
     }
 
-    public int getHp() {
+    public int getHP() {
         return hp;
     }
 
@@ -26,7 +34,7 @@ public abstract class MythicalCreature implements IRoomable {
         return equipment;
     }
 
-    public void setHp(int hp) {
+    public void setHP(int hp) {
         this.hp = hp;
     }
 
@@ -52,6 +60,6 @@ public abstract class MythicalCreature implements IRoomable {
             int result = characterHealth - attackDamage;
             character.setHp(result);
         }
-    }
+
 
 }

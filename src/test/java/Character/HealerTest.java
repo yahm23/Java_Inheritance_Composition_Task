@@ -32,7 +32,11 @@ public class HealerTest {
     public void canHeal(){
     orc.attack(healer);
     healer.heal();
+<<<<<<< HEAD
     assertEquals(56, healer.getHp());
+=======
+    assertEquals(46, healer.getHP());
+>>>>>>> 628bbde7f02adffeae430241232cc087d16ba44f
     }
 
 

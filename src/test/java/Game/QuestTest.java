@@ -5,19 +5,17 @@ import Creature.Orc;
 
 import Equipments.Sword;
 import Equipments.Weapon;
-import Game.Game;
 import Room.Room;
 import Types.ArmourType;
 import Types.TreasureType;
-import com.sun.tools.corba.se.idl.constExpr.Or;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class GameTest {
+public class QuestTest {
 
-    Game game;
+    Quest quest;
     Warrior warrior;
     Orc orc;
     Room room;
@@ -35,9 +33,10 @@ public class GameTest {
         game =new Game(warrior);
 
     }
+
     @Test
-    public void canCheckChestHasTreasure(){
-        assertEquals(1,room.getChest().size() );
+    public void checkTheQuestCanHaveAPlayer(){
+        assertEquals(warrior, quest.getPlayer());
     }
 
     @Test
@@ -71,6 +70,15 @@ public class GameTest {
     public void canNotCompleteRoomWithTreasure(){
         assertFalse(room.missionCompleted());
     }
+    @Test
+    public void canAddRoomsToTheQuest(){
+        quest.addRoom(room);
+        assertEquals(1, quest.getRoomList().size());
+    }
+
+
+
+
 
 
 

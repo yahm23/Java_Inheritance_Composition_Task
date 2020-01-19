@@ -1,8 +1,12 @@
 package Character;
 
+import Behaviours.ICompanianble;
 import Creature.Dragon;
 import Creature.MythicalCreature;
-import Equipments.*;
+
+import Creature.Ogre;
+import Equipments.Equipment;
+import Equipments.Spell;
 import Types.ArmourType;
 
 public class SpellCaster extends Character {
@@ -34,4 +38,5 @@ public class SpellCaster extends Character {
     public void setMythicalCreature(MythicalCreature mythicalCreature) {
         this.mythicalCreature = mythicalCreature;
     }
+
 }

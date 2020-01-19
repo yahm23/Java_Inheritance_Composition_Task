@@ -39,11 +39,7 @@ public class Game {
         this.rooms.add(room4);
     }
 
-//    public void moveNextRoom(){
-//        for (Room room: rooms){
-//            while room
-//        }
-//    }
+
 
 
 

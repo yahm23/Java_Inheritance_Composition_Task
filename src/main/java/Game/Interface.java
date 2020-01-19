@@ -1,6 +1,8 @@
 package Game;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 import Character.Healer;
 import Character.SpellCaster;
 import Character.Warrior;
@@ -22,19 +24,18 @@ public class Interface {
         System.out.println("Warrior:(W)");
         System.out.println("SpellCaster:(S)");
 
-        Character.Character player;
 
         Scanner letter = new Scanner(System.in);
         String characterLetter = letter.next();
         if(characterLetter =="w" ||characterLetter =="W"){
-            player = new Warrior();
+            Character.Character player = new Warrior();
         }
         if(characterLetter =="H" ||characterLetter =="h"){
-            player = new Healer();
+            Character.Character player = new Healer();
         }
 
         if(characterLetter =="S" ||characterLetter =="s"){
-            player = new SpellCaster();
+            Character.Character player = new SpellCaster();
         }
         else{
             System.out.println("Pick again");
