@@ -1,19 +1,21 @@
 package Character;
 
 import Equipments.Equipment;
+import Equipments.*;
 import Types.ArmourType;
 
 public class Healer extends Character {
-    public Healer(int hp, Equipment equipment, ArmourType armour) {
-        super(hp, equipment, armour);
-        this.setArmour(ArmourType.CLOTH);
+    private static final Elixir lix = new Elixir();
+
+    public Healer() {
+        super(80,lix, ArmourType.CLOTH);
     }
 
     public void heal() {
         int damage = this.equipment.getDMG();
         int initHealth = this.hp;
-        int healamount = damage * 2;
-        this.setHp(initHealth + healamount);
+        int healAmount = damage * 2;
+        this.setHp(initHealth + healAmount);
 
     }
 

@@ -2,15 +2,17 @@ package Character;
 
 import Creature.Dragon;
 import Creature.MythicalCreature;
-import Equipments.Equipment;
+import Equipments.*;
 import Types.ArmourType;
 
 public class SpellCaster extends Character {
 
-    private MythicalCreature mythicalCreature;
 
-    public SpellCaster(int hp, Equipment equipment, ArmourType armour, MythicalCreature mythicalCreature) {
-        super(hp, equipment, armour);
+    private MythicalCreature mythicalCreature;
+    private static Spell fireball;
+
+    public SpellCaster( ) {
+        super(40, fireball, ArmourType.CLOTH);
         this.mythicalCreature = mythicalCreature;
 
         this.setArmour(ArmourType.CLOTH);
@@ -29,4 +31,7 @@ public class SpellCaster extends Character {
         return this.mythicalCreature.getHp();
     }
 
+    public void setMythicalCreature(MythicalCreature mythicalCreature) {
+        this.mythicalCreature = mythicalCreature;
+    }
 }
