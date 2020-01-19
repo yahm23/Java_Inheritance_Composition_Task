@@ -32,7 +32,7 @@ public class GameTest {
         orc = new Orc();
         room = new Room(TreasureType.GEM);
         room2 = new Room(orc);
-//        game =new Game(warrior);
+        game =new Game(warrior);
 
     }
     @Test

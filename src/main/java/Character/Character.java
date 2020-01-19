@@ -1,5 +1,6 @@
 package Character;
 
+import Behaviours.IPlayable;
 import Creature.MythicalCreature;
 import Equipments.Equipment;
 import Room.Room;
@@ -8,7 +9,7 @@ import Types.TreasureType;
 
 import java.util.ArrayList;
 
-public abstract class Character  {
+public abstract class Character implements IPlayable {
     int hp;
     Equipment equipment;
     ArmourType armour;

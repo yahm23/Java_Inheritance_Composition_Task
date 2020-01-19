@@ -1,5 +1,6 @@
 package Game;
 
+import Behaviours.IPlayable;
 import Creature.Dragon;
 import Creature.Orc;
 import Room.Room;
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 
 public class Game {
     ArrayList<Room> rooms;
-    Character character;
+    IPlayable character;
     Room room1;
     Room room2;
     Room room3;
@@ -20,7 +21,7 @@ public class Game {
     TreasureType loot2;
     Orc orc;
 
-    public Game(Character character){
+    public Game(IPlayable character){
         this.character = character;
         this.rooms = new ArrayList<Room>();
 
@@ -37,6 +38,12 @@ public class Game {
         this.rooms.add(room3);
         this.rooms.add(room4);
     }
+
+//    public void moveNextRoom(){
+//        for (Room room: rooms){
+//            while room
+//        }
+//    }
 
 
 
